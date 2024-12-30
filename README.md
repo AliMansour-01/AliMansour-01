@@ -44,3 +44,8 @@
     <img src="https://img.shields.io/static/v1?message=Outlook&logo=microsoft-outlook&label=&color=0078D4&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="Outlook" />
   </a>
 </div>
+
+###
+
+![Snake animation](https://github.com/AliMansour-01/AliMansour-01/blob/output/snake.svg)
+
