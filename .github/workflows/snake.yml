@@ -1,0 +1,33 @@
+name: Generate Snake Animation
+
+on:
+  schedule:
+    # Run every 12 hours
+    - cron: "0 */12 * * *"
+  workflow_dispatch: # Allow manual runs
+  push:
+    branches:
+      - main # Use 'master' if your default branch is master
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Generate the snake.svg
+      - name: Generate snake animation
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: AliMansour-01 # Replace with your GitHub username
+          outputs: dist/snake.svg
+
+      # Step 2: Push the output to a new branch
+      - name: Push generated snake.svg
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
