@@ -21,7 +21,7 @@ jobs:
           github_user_name: AliMansour-01
           outputs: dist/snake.svg
           color_snake: "#0000FF" # Blue snake
-          color_dots: "#000000" # Black boxes
+          color_dots: "#000000" # Black grid boxes
 
       - name: Push generated snake.svg
         uses: crazy-max/ghaction-github-pages@v3.1.0
